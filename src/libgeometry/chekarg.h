@@ -1,5 +1,8 @@
 #pragma once
 
-int Argument(char* str);
-int End(char* str);
-int Errors(char* str, int countFigures);
+int Argument(char*);
+int End(char*);
+int Errors(char*, int);
+int Figure(char*);
+float Area(char*);
+float Perimetr(char*);

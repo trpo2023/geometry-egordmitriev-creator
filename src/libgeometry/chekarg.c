@@ -1,4 +1,4 @@
-#include <libgeometry/parser.h>
+#include <libgeometry/chekarg.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -6,7 +6,8 @@ int Argument(char* str)
 {
     int ret = 0;
     int count = 0;
-    for (int i = 7; str[i] != ',' && i < strlen(str); i++) {
+    int u = strlen(str);
+    for (int i = 7; str[i] != ',' && i < u; i++) {
         if ((str[i] != '.' && str[i] != ' ')
             && !(str[i] >= 48 && str[i] <= 57)) {
             printf("Figure coordinates entered incorrectly\n\n");
@@ -26,14 +27,14 @@ int Argument(char* str)
     }
 
     int index = 0;
-    for (int i = 0; i != strlen(str); i++) {
+    for (int i = 0; i != u; i++) {
         if (str[i] == ',') {
             index = i + 1;
-            i = strlen(str) - 1;
+            i = u - 1;
         }
     }
 
-    for (; str[index] != ')' && index < strlen(str); index++) {
+    for (; str[index] != ')' && index < u; index++) {
         if ((str[index] != '.' && str[index] != ' ')
             && !(str[index] >= 48 && str[index] <= 57)) {
             printf("Figure radius entered incorrectly\n\n");
@@ -57,12 +58,13 @@ int End(char* str)
 {
     int ret = 1, firstBracket = 0;
     int endingSymbol;
+    int u = strlen(str);
     if (str[strlen(str) - 1] == '\n')
         endingSymbol = strlen(str) - 2;
     else
         endingSymbol = strlen(str) - 1;
 
-    for (int i = 0; i < strlen(str); i++) {
+    for (int i = 0; i < u; i++) {
         if (str[i] == ')') {
             firstBracket = i;
             break;
@@ -74,10 +76,10 @@ int End(char* str)
     return ret;
 }
 
-int Errors(char* str, int countFigures)
+int Errors(char* str, int Figures)
 {
-    printf("Figure %d:\n", countFigures);
-    if (checkFigure(str)) {
+    printf("Figure %d:\n", Figures);
+    if (Figure(str)) {
         printf("%s", str);
         printf("Incorrect input of figure name\n\n");
     }
