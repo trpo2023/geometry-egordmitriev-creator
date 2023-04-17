@@ -24,5 +24,6 @@ int main()
 
     fclose(file);
     printf("\n");
+
     return 0;
 }
