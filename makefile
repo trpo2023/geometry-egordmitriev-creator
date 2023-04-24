@@ -1,7 +1,8 @@
+CFLAGS = -Wall -Wextra -Werror
+
 APP_NAME = geometry
 LIB_NAME = libgeometry
 
-CFLAGS = -Wall -Wextra -Werror
 CPPFLAGS = -I src -MP -MMD
 
 BIN_DIR = bin
