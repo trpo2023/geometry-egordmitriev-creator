@@ -1,5 +1,5 @@
 #include <libgeometry/area.h>
-#include <libgeometry/chekarg.h>
+#include <libgeometry/checkarg.h>
 #include <libgeometry/perimetr.h>
 #include <libgeometry/vocabulary.h>
 #include <stdio.h>
@@ -10,20 +10,19 @@
 int main()
 {
     FILE* file;
-    file = fopen("testdata.txt", "r");
+    file = fopen("input.txt", "r");
     if (file == NULL) {
         printf("Error of oppening file!");
         return 1;
     }
     char str1[SIZE];
-    int Figures = 0;
+    int countFigures = 0;
     while (fgets(str1, SIZE, file)) {
-        Figures++;
-        Errors(str1, Figures);
+        countFigures++;
+        Errors(str1, countFigures);
     }
 
     fclose(file);
     printf("\n");
-
     return 0;
 }
