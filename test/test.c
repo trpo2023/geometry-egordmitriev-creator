@@ -95,7 +95,7 @@ CTEST(check_perimetr, correct_perinetr)
     ASSERT_DBL_NEAR_TOL(expected, result, 0.00000000001);
 }
 
-CTEST(check_perimetr, correct_perinetr)
+CTEST(check_perimetr, incorrect_perinetr)
 {
     char* str = "circle(2 2, x)";
     const double expected = -1;
