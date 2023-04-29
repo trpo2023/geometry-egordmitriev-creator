@@ -1,10 +1,10 @@
-main 
-# no *.o or *.a files
+*.a
+*.o
+*.d
+main
+input.txt
 *.[oa]
-# no temporary files
 *~
 *swp
-# no *.txt files
-*.txt
-# but track input.txt
-!input.txt
+*#
+bin/
